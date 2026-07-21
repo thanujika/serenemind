@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SereneMind · Professional Wellness Hub</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ----- RESET & BASE ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f7f4f1;
+      color: #2c3e4e;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --sage: #b7c9b0;
+      --sage-dark: #8aa38a;
+      --mist: #dce5e0;
+      --linen: #f2ede8;
+      --slate: #3b4a54;
+      --soft-teal: #7f9c9b;
+      --warm-white: #fcf9f7;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03);
+      --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 24px 48px rgba(0, 0, 0, 0.06);
+      --radius-sm: 20px;
+      --radius-md: 40px;
+      --radius-lg: 60px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #e8e2db;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #b7c9b0;
+      border-radius: 12px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ----- HEADER / NAV (refined) ----- */
+    header {
+      padding: 18px 0 14px;
+      background: rgba(252, 249, 247, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(183, 201, 176, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, #5f7e6b, #8aa38a);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 12px rgba(95, 126, 107, 0.25);
+    }
+    .logo span {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      color: #2f3e45;
+    }
+    .logo span small {
+      font-weight: 300;
+      font-size: 0.8rem;
+      color: #7f9c9b;
+      display: block;
+      margin-top: -4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #3b4a54;
+      font-weight: 450;
+      font-size: 0.92rem;
+      transition: var(--transition);
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+      letter-spacing: 0.2px;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      border-bottom-color: #5f7e6b;
+      color: #1d2d35;
+    }
+    .nav-links .btn-outline {
+      border: 1.5px solid #5f7e6b;
+      padding: 8px 22px;
+      border-radius: 40px;
+      background: transparent;
+      font-weight: 500;
+      color: #2f3e45;
+      transition: var(--transition);
+    }
+    .nav-links .btn-outline:hover {
+      background: #5f7e6b;
+      color: #fcf9f7;
+      border-color: #5f7e6b;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(95, 126, 107, 0.2);
+    }
+
+    /* ----- HERO (elegant) ----- */
+    .hero {
+      padding: 70px 0 50px;
+      background: linear-gradient(160deg, #f2ede8 0%, #e8e2db 100%);
+      border-radius: 0 0 80px 80px;
+      margin-bottom: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(183, 201, 176, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-text {
+      flex: 1 1 300px;
+    }
+    .hero-text .badge {
+      display: inline-block;
+      background: rgba(95, 126, 107, 0.12);
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #3f5f4b;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(4px);
+    }
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: #1f3138;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+    }
+    .hero-text h1 span {
+      color: #5f7e6b;
+      font-style: italic;
+    }
+    .hero-text p {
+      font-size: 1.15rem;
+      margin: 20px 0 30px;
+      color: #3f515b;
+      max-width: 500px;
+      line-height: 1.7;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #5f7e6b;
+      border: none;
+      padding: 14px 38px;
+      border-radius: 60px;
+      color: white;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 4px 16px rgba(95, 126, 107, 0.25);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-primary:hover {
+      background: #4b6a56;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(95, 126, 107, 0.3);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 1.5px solid #5f7e6b;
+      padding: 14px 38px;
+      border-radius: 60px;
+      color: #2a3d44;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-secondary:hover {
+      background: rgba(95, 126, 107, 0.06);
+      border-color: #3f5f4b;
+      transform: translateY(-2px);
+    }
+    .hero-image {
+      flex: 1 1 200px;
+      text-align: center;
+      font-size: 8rem;
+      color: #7f9c9b;
+      opacity: 0.5;
+      line-height: 1;
+      filter: drop-shadow(0 8px 24px rgba(95, 126, 107, 0.08));
+    }
+
+    /* ----- SECTION TITLES (refined) ----- */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 56px 0 12px;
+      color: #1f3138;
+      letter-spacing: -0.3px;
+      font-family: 'Playfair Display', serif;
+    }
+    .section-title i {
+      margin-right: 14px;
+      color: #5f7e6b;
+      font-size: 1.8rem;
+    }
+    .section-sub {
+      color: #516973;
+      margin-bottom: 32px;
+      font-size: 1.05rem;
+      font-weight: 300;
+      max-width: 600px;
+    }
+
+    /* ----- ACTIVITY CARDS (elegant) ----- */
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 28px;
+      margin: 20px 0 30px;
+    }
+    .activity-card {
+      background: var(--warm-white);
+      padding: 32px 22px 28px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid rgba(183, 201, 176, 0.08);
+      text-align: center;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    .activity-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #b7c9b0, #5f7e6b);
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .activity-card:hover::before {
+      opacity: 1;
+    }
+    .activity-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(183, 201, 176, 0.2);
+    }
+    .activity-card .icon-wrap {
+      width: 64px;
+      height: 64px;
+      background: rgba(183, 201, 176, 0.12);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 2rem;
+      color: #5f7e6b;
+      transition: var(--transition);
+    }
+    .activity-card:hover .icon-wrap {
+      background: rgba(95, 126, 107, 0.12);
+      transform: scale(1.05);
+    }
+    .activity-card h3 {
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+      color: #283b41;
+    }
+    .activity-card p {
+      color: #4c5f69;
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .activity-card .btn-small {
+      background: #e3ede1;
+      border: none;
+      padding: 6px 20px;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #2f4a41;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.82rem;
+    }
+    .activity-card .btn-small:hover {
+      background: #b7c9b0;
+      color: #1f2f2a;
+    }
+
+    /* ----- BREATHING WIDGET (refined) ----- */
+    .breathe-box {
+      background: linear-gradient(145deg, #f2ede8, #e8e2db);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      margin: 30px 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .breathe-text h3 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #1f3138;
+      font-family: 'Playfair Display', serif;
+    }
+    .breathe-text p {
+      color: #3d535d;
+      font-size: 0.95rem;
+    }
+    .breathe-control {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .circle-timer {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: var(--warm-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #2a3d44;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+      transition: var(--transition);
+      font-variant-numeric: tabular-nums;
+    }
+    .breathe-btn {
+      background: #5f7e6b;
+      border: none;
+      color: white;
+      padding: 12px 32px;
+      border-radius: 60px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1rem;
+      box-shadow: 0 4px 14px rgba(95, 126, 107, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .breathe-btn:hover {
+      background: #4b6a56;
+      transform: scale(1.02);
+      box-shadow: 0 6px 20px rgba(95, 126, 107, 0.25);
+    }
+
+    /* ----- NEW: MEDITATION TIMER ----- */
+    .meditation-timer {
+      background: var(--warm-white);
+      border-radius: var(--radius-lg);
+      padding: 32px 30px;
+      margin: 30px 0 20px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(183, 201, 176, 0.08);
+      text-align: center;
+    }
+    .meditation-timer h3 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #1f3138;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 12px;
+    }
+    .meditation-timer h3 i {
+      color: #5f7e6b;
+      margin-right: 10px;
+    }
+    .meditation-display {
+      font-size: 3.8rem;
+      font-weight: 600;
+      color: #1f3138;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 2px;
+      padding: 16px 0;
+      font-family: 'Inter', sans-serif;
+    }
+    .meditation-controls {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .meditation-controls button {
+      padding: 10px 28px;
+      border-radius: 60px;
+      border: none;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-meditation-start {
+      background: #5f7e6b;
+      color: white;
+      box-shadow: 0 4px 12px rgba(95, 126, 107, 0.2);
+    }
+    .btn-meditation-start:hover {
+      background: #4b6a56;
+      transform: scale(1.02);
+    }
+    .btn-meditation-reset {
+      background: #e8e2db;
+      color: #2f4149;
+    }
+    .btn-meditation-reset:hover {
+      background: #d5cdc4;
+    }
+    .btn-meditation-preset {
+      background: transparent;
+      border: 1.5px solid #dce5e0;
+      color: #3b4a54;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+    }
+    .btn-meditation-preset:hover {
+      border-color: #b7c9b0;
+      background: #f2ede8;
+    }
+    .btn-meditation-preset.active-preset {
+      border-color: #5f7e6b;
+      background: #e3ede1;
+      color: #1f3138;
+    }
+
+    /* ----- AFFIRMATION (refined) ----- */
+    .affirmation-box {
+      background: var(--warm-white);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      margin: 30px 0 20px;
+      border: 1px solid rgba(183, 201, 176, 0.08);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      transition: var(--transition);
+    }
+    .affirmation-box:hover {
+      box-shadow: var(--shadow-md);
+    }
+    .affirmation-box h3 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #1f3138;
+      font-family: 'Playfair Display', serif;
+    }
+    .affirmation-box h3 i {
+      color: #5f7e6b;
+      margin-right: 10px;
+    }
+    #affirmationDisplay {
+      font-size: 1.5rem;
+      font-weight: 350;
+      color: #2a3d44;
+      padding: 24px 10px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+      line-height: 1.6;
+      font-family: 'Playfair Display', serif;
+    }
+    .affirmation-btn {
+      background: #5f7e6b;
+      border: none;
+      color: white;
+      padding: 12px 36px;
+      border-radius: 60px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(95, 126, 107, 0.15);
+    }
+    .affirmation-btn:hover {
+      background: #4b6a56;
+      transform: scale(1.02);
+    }
+
+    /* ----- MOOD TRACKER (refined + dashboard) ----- */
+    .mood-tracker {
+      background: var(--warm-white);
+      border-radius: var(--radius-lg);
+      padding: 32px 30px;
+      margin: 30px 0 20px;
+      border: 1px solid rgba(183, 201, 176, 0.08);
+      box-shadow: var(--shadow-sm);
+    }
+    .mood-tracker h3 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #1f3138;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 8px;
+    }
+    .mood-tracker h3 i {
+      color: #5f7e6b;
+      margin-right: 10px;
+    }
+    .mood-options {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 16px 0 12px;
+    }
+    .mood-btn {
+      background: transparent;
+      border: 2px solid #e8e2db;
+      border-radius: 60px;
+      padding: 12px 26px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #3b4a54;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mood-btn:hover {
+      background: #f2ede8;
+      border-color: #b7c9b0;
+      transform: scale(1.04);
+    }
+    .mood-btn.active-mood {
+      background: #5f7e6b;
+      border-color: #5f7e6b;
+      color: white;
+      box-shadow: 0 4px 12px rgba(95, 126, 107, 0.2);
+    }
+    #moodFeedback {
+      font-size: 1rem;
+      color: #4f646f;
+      margin-top: 8px;
+      min-height: 30px;
+      font-weight: 400;
+    }
+    .mood-dashboard {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #e8e2db;
+    }
+    .mood-stats {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .mood-stat {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: #4f646f;
+    }
+    .mood-stat .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .mood-history {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .mood-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-block;
+      transition: var(--transition);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      border: 2px solid transparent;
+    }
+    .mood-dot:hover {
+      transform: scale(1.2);
+      border-color: #b7c9b0;
+    }
+
+    /* ----- SOUND PLAYER (refined) ----- */
+    .sound-player {
+      background: var(--warm-white);
+      border-radius: var(--radius-lg);
+      padding: 32px 30px;
+      margin: 30px 0 20px;
+      border: 1px solid rgba(183, 201, 176, 0.08);
+      box-shadow: var(--shadow-sm);
+    }
+    .sound-player h3 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #1f3138;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 8px;
+    }
+    .sound-player h3 i {
+      color: #5f7e6b;
+      margin-right: 10px;
+    }
+    .sound-player p {
+      color: #4f646f;
+      font-size: 0.92rem;
+    }
+    .sound-options {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 16px 0 8px;
+    }
+    .sound-btn {
+      background: #f2ede8;
+      border: 2px solid transparent;
+      border-radius: 60px;
+      padding: 12px 26px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #2f4149;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 100px;
+      justify-content: center;
+    }
+    .sound-btn:hover {
+      background: #e8e2db;
+      transform: scale(1.03);
+    }
+    .sound-btn.active-sound {
+      background: #5f7e6b;
+      color: white;
+      border-color: #5f7e6b;
+      box-shadow: 0 4px 14px rgba(95, 126, 107, 0.2);
+    }
+    #soundStatus {
+      font-size: 0.92rem;
+      color: #4f646f;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    /* ----- RESOURCES (refined) ----- */
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+      margin: 20px 0 30px;
+    }
+    .resource-card {
+      background: var(--warm-white);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(183, 201, 176, 0.08);
+      transition: var(--transition);
+    }
+    .resource-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(183, 201, 176, 0.15);
+    }
+    .resource-card h4 {
+      font-size: 1.05rem;
+      color: #1f3138;
+      margin-bottom: 8px;
+    }
+    .resource-card h4 i {
+      margin-right: 10px;
+      color: #5f7e6b;
+      width: 24px;
+      text-align: center;
+    }
+    .resource-card p {
+      font-size: 0.9rem;
+      color: #4f646f;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .resource-card a {
+      display: inline-block;
+      background: #e3ede1;
+      padding: 6px 20px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.82rem;
+      color: #2f4a41;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .resource-card a:hover {
+      background: #b7c9b0;
+      color: #1f2f2a;
+    }
+
+    /* ----- QUOTE (elegant) ----- */
+    .quote-section {
+      background: linear-gradient(145deg, #f2ede8, #e8e2db);
+      border-radius: var(--radius-lg);
+      padding: 44px 36px;
+      margin: 40px 0 20px;
+      border-left: 6px solid #b7c9b0;
+      box-shadow: var(--shadow-sm);
+    }
+    .quote-section i {
+      color: #5f7e6b;
+      font-size: 2.2rem;
+      margin-right: 14px;
+      opacity: 0.6;
+    }
+    .quote-section blockquote {
+      font-size: 1.35rem;
+      font-weight: 350;
+      color: #1f3138;
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+      line-height: 1.6;
+    }
+
+    /* ----- FOOTER (refined) ----- */
+    footer {
+      margin-top: 60px;
+      padding: 32px 0 20px;
+      border-top: 1px solid #dce5e0;
+      color: #4f646f;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    footer .footer-brand i {
+      color: #5f7e6b;
+      margin-right: 6px;
+    }
+    .footer-links a {
+      color: #4f646f;
+      text-decoration: none;
+      margin: 0 16px 0 0;
+      font-size: 0.88rem;
+      transition: var(--transition);
+    }
+    .footer-links a:hover {
+      color: #1d2d35;
+    }
+
+    /* ----- RESPONSIVE ----- */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+      .header-flex {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 20px;
+      }
+      .hero-text h1 {
+        font-size: 2.4rem;
+      }
+      .hero {
+        padding: 40px 0 30px;
+        border-radius: 0 0 40px 40px;
+      }
+      .meditation-display {
+        font-size: 2.8rem;
+      }
+      .breathe-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .mood-dashboard {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .quote-section blockquote {
+        font-size: 1.1rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      .activity-grid {
+        grid-template-columns: 1fr;
+      }
+      .meditation-controls {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-flex">
+      <div class="logo">
+        <div class="logo-icon"><i class="fas fa-leaf"></i></div>
+        <div>
+          <span>SereneMind</span>
+          <small>wellness hub</small>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href="#activities"><i class="fas fa-spa"></i> Activities</a>
+        <a href="#resources"><i class="fas fa-hand-holding-heart"></i> Resources</a>
+        <a href="#" class="btn-outline"><i class="fas fa-user"></i> My space</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="badge"><i class="fas fa-heart"></i> Your safe space</div>
+          <h1>Breathe. Pause.<br /><span>Feel calm again.</span></h1>
+          <p>Gentle activities, soothing sounds &amp; a space designed to lower stress — right in your browser.</p>
+          <div class="hero-cta">
+            <button class="btn-primary" id="startBreatheBtn"><i class="fas fa-wind"></i> Start breathing</button>
+            <button class="btn-secondary" id="resetBreatheBtn"><i class="fas fa-undo-alt"></i> Reset</button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <i class="fas fa-cloud-moon"></i>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <!-- ACTIVITIES -->
+      <h2 class="section-title" id="activities"><i class="fas fa-seedling"></i> Calming activities</h2>
+      <p class="section-sub">Quick, mindful exercises to ease your mind.</p>
+      <div class="activity-grid">
+        <div class="activity-card">
+          <div class="icon-wrap"><i class="fas fa-water"></i></div>
+          <h3>Ocean breath</h3>
+          <p>Slow, rhythmic breathing with visual tide.</p>
+          <button class="btn-small" onclick="alert('🌊 Breathe in for 4, hold 4, out 6. Repeat 5 times.')">Try now</button>
+        </div>
+        <div class="activity-card">
+          <div class="icon-wrap"><i class="fas fa-tree"></i></div>
+          <h3>Forest walk</h3>
+          <p>Immersive 3‑minute nature visualization.</p>
+          <button class="btn-small" onclick="alert('🌲 Close your eyes. Imagine a sunlit forest path...')">Start walk</button>
+        </div>
+        <div class="activity-card">
+          <div class="icon-wrap"><i class="fas fa-hand-sparkles"></i></div>
+          <h3>5 senses check</h3>
+          <p>Ground yourself by noticing 5 things.</p>
+          <button class="btn-small" onclick="alert('👁️ 5 things you see. 4 you touch. 3 you hear. 2 you smell. 1 you taste.')">Ground now</button>
+        </div>
+        <div class="activity-card">
+          <div class="icon-wrap"><i class="fas fa-heart-circle-plus"></i></div>
+          <h3>Self‑compassion</h3>
+          <p>Kind phrases &amp; gentle self-talk.</p>
+          <button class="btn-small" onclick="alert('💛 “May I be kind to myself. May I give myself grace.”')">Read</button>
+        </div>
+      </div>
+
+      <!-- BREATHING WIDGET -->
+      <div class="breathe-box" id="breatheWidget">
+        <div class="breathe-text">
+          <h3><i class="fas fa-circle" style="color:#5f7e6b;font-size:0.9rem;"></i> 4‑7‑8 breathing</h3>
+          <p>Inhale 4s · hold 7s · exhale 8s. Reduces anxiety.</p>
+          <div style="margin-top:6px;display:flex;gap:14px;flex-wrap:wrap;">
+            <span style="background:rgba(255,255,255,0.5);padding:4px 18px;border-radius:40px;font-size:0.9rem;backdrop-filter:blur(4px);"><i class="far fa-clock"></i> <span id="breathTimerDisplay">0</span>s</span>
+            <span style="background:rgba(255,255,255,0.5);padding:4px 18px;border-radius:40px;font-size:0.9rem;backdrop-filter:blur(4px);"><i class="fas fa-arrow-up"></i> <span id="breathPhase">inhale</span></span>
+          </div>
+        </div>
+        <div class="breathe-control">
+          <div class="circle-timer" id="circleTimer">4</div>
+          <button class="breathe-btn" id="breatheToggleBtn"><i class="fas fa-play"></i> Start</button>
+        </div>
+      </div>
+
+      <!-- NEW: MEDITATION TIMER -->
+      <div class="meditation-timer">
+        <h3><i class="fas fa-spa"></i> Meditation timer</h3>
+        <p style="color:#4f646f;font-size:0.95rem;">Set a preset or enter your own time.</p>
+        <div class="meditation-display" id="meditationDisplay">05:00</div>
+        <div class="meditation-controls">
+          <button class="btn-meditation-preset active-preset" data-minutes="5">5 min</button>
+          <button class="btn-meditation-preset" data-minutes="10">10 min</button>
+          <button class="btn-meditation-preset" data-minutes="15">15 min</button>
+          <button class="btn-meditation-preset" data-minutes="20">20 min</button>
+          <button class="btn-meditation-start" id="meditationStartBtn"><i class="fas fa-play"></i> Start</button>
+          <button class="btn-meditation-reset" id="meditationResetBtn"><i class="fas fa-stop"></i> Reset</button>
+        </div>
+        <div id="meditationStatus" style="margin-top:10px;font-size:0.9rem;color:#4f646f;">Ready</div>
+      </div>
+
+      <!-- AFFIRMATION -->
+      <div class="affirmation-box">
+        <h3><i class="fas fa-heart"></i> Daily affirmation</h3>
+        <div id="affirmationDisplay">Tap the button for a gentle reminder.</div>
+        <button class="affirmation-btn" id="newAffirmationBtn"><i class="fas fa-sync-alt"></i> New affirmation</button>
+      </div>
+
+      <!-- MOOD TRACKER (with dashboard) -->
+      <div class="mood-tracker">
+        <h3><i class="fas fa-face-smile"></i> How are you feeling?</h3>
+        <div class="mood-options">
+          <button class="mood-btn" data-mood="great" style="color:#2d6a4f;">🌿 Great</button>
+          <button class="mood-btn" data-mood="okay" style="color:#6b8c5c;">🌱 Okay</button>
+          <button class="mood-btn" data-mood="meh" style="color:#b68b6e;">🍂 Meh</button>
+          <button class="mood-btn" data-mood="low" style="color:#8d6b6b;">🌧️ Low</button>
+        </div>
+        <div id="moodFeedback">Pick a mood to track it.</div>
+        <div class="mood-dashboard">
+          <div class="mood-stats" id="moodStats">
+            <span class="mood-stat"><span class="dot" style="background:#2d6a4f;"></span> Great: <strong id="countGreat">0</strong></span>
+            <span class="mood-stat"><span class="dot" style="background:#6b8c5c;"></span> Okay: <strong id="countOkay">0</strong></span>
+            <span class="mood-stat"><span class="dot" style="background:#b68b6e;"></span> Meh: <strong id="countMeh">0</strong></span>
+            <span class="mood-stat"><span class="dot" style="background:#8d6b6b;"></span> Low: <strong id="countLow">0</strong></span>
+          </div>
+          <div class="mood-history" id="moodHistory"></div>
+        </div>
+      </div>
+
+      <!-- SOUND PLAYER -->
+      <div class="sound-player">
+        <h3><i class="fas fa-headphones"></i> Ambient sounds</h3>
+        <p>Click to play a soothing background sound (simulated).</p>
+        <div class="sound-options">
+          <button class="sound-btn" data-sound="rain"><i class="fas fa-cloud-rain"></i> Rain</button>
+          <button class="sound-btn" data-sound="waves"><i class="fas fa-water"></i> Waves</button>
+          <button class="sound-btn" data-sound="forest"><i class="fas fa-tree"></i> Forest</button>
+          <button class="sound-btn" data-sound="fire"><i class="fas fa-fire"></i> Fire</button>
+        </div>
+        <div id="soundStatus">🔇 No sound playing</div>
+      </div>
+
+      <!-- RESOURCES -->
+      <h2 class="section-title" id="resources"><i class="fas fa-hand-holding-heart"></i> Resources &amp; support</h2>
+      <p class="section-sub">Professional help and calming content to support your journey.</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h4><i class="fas fa-phone-alt"></i> Sri Lanka helplines</h4>
+          <p><strong>1333 Crisis Support Line</strong> — 24/7, toll‑free, confidential.</p>
+          <p><strong>eMindCare</strong> — online psychiatrists &amp; counsellors.</p>
+          <a href="https://www.echannelling.com" target="_blank"><i class="fas fa-external-link-alt"></i> Visit eMindCare</a>
+        </div>
+        <div class="resource-card">
+          <h4><i class="fab fa-youtube"></i> Guided meditation</h4>
+          <p><strong>Michael Sealey</strong> — calming hypnosis &amp; sleep.</p>
+          <p><strong>The Honest Guys</strong> — relaxation guidance.</p>
+          <a href="https://www.youtube.com/results?search_query=Michael+Sealey+guided+meditation" target="_blank"><i class="fas fa-external-link-alt"></i> Search on YouTube</a>
+        </div>
+        <div class="resource-card">
+          <h4><i class="fab fa-youtube"></i> Yoga for calm</h4>
+          <p><strong>Yoga With Adriene</strong> — 18‑min calming practice.</p>
+          <p><strong>Yoga With Kassandra</strong> — gentle stress relief.</p>
+          <a href="https://www.youtube.com/results?search_query=Yoga+With+Adriene+calm" target="_blank"><i class="fas fa-external-link-alt"></i> Search on YouTube</a>
+        </div>
+        <div class="resource-card">
+          <h4><i class="fas fa-newspaper"></i> Science‑backed calm</h4>
+          <p>BBC: count blessings, watch funny videos, sing &amp; more.</p>
+          <a href="https://www.bbc.com/future/article/20251231-nine-simple-steps-to-feeling-better-in-2026" target="_blank"><i class="fas fa-external-link-alt"></i> Read BBC article</a>
+        </div>
+      </div>
+
+      <!-- QUOTE -->
+      <div class="quote-section">
+        <i class="fas fa-quote-left"></i>
+        <blockquote>
+          “Almost everything will work again if you unplug it for a few minutes, including you.”
+          <span style="display:block;margin-top:8px;font-weight:300;font-size:1rem;font-family:'Inter',sans-serif;">— Anne Lamott</span>
+        </blockquote>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <div class="footer-brand">
+      <i class="fas fa-leaf"></i> SereneMind &nbsp;·&nbsp; calm space for everyone
+    </div>
+    <div class="footer-links">
+      <a href="#"><i class="fas fa-shield-alt"></i> Privacy</a>
+      <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="#"><i class="fas fa-heart"></i> About</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      // ============================================
+      // 1. BREATHING WIDGET
+      // ============================================
+      const circleTimer = document.getElementById('circleTimer');
+      const breathPhase = document.getElementById('breathPhase');
+      const breathTimerDisplay = document.getElementById('breathTimerDisplay');
+      const toggleBtn = document.getElementById('breatheToggleBtn');
+      const startBreatheBtn = document.getElementById('startBreatheBtn');
+      const resetBreatheBtn = document.getElementById('resetBreatheBtn');
+
+      let timerInterval = null;
+      let isRunning = false;
+      let currentPhase = 'inhale';
+      let timeLeft = 4;
+      let totalTime = 0;
+
+      function updateDisplay() {
+        circleTimer.textContent = timeLeft;
+        breathPhase.textContent = currentPhase;
+        breathTimerDisplay.textContent = totalTime;
+      }
+      updateDisplay();
+
+      function stopTimer() {
+        if (timerInterval) { clearInterval(timerInterval);
+          timerInterval = null; }
+        isRunning = false;
+        toggleBtn.innerHTML = '<i class="fas fa-play"></i> Start';
+      }
+
+      function resetBreath() {
+        stopTimer();
+        currentPhase = 'inhale';
+        timeLeft = 4;
+        totalTime = 0;
+        updateDisplay();
+        toggleBtn.innerHTML = '<i class="fas fa-play"></i> Start';
+        circleTimer.style.color = '#2a3d44';
+      }
+
+      function startBreathCycle() {
+        if (isRunning) { stopTimer(); return; }
+        if (timeLeft === 0 && currentPhase === 'inhale') {
+          currentPhase = 'inhale';
+          timeLeft = 4;
+          totalTime = 0;
+          updateDisplay();
+        }
+        isRunning = true;
+        toggleBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+        timerInterval = setInterval(() => {
+          timeLeft -= 1;
+          totalTime += 1;
+          if (timeLeft <= 0) {
+            if (currentPhase === 'inhale') { currentPhase = 'hold';
+              timeLeft = 7; } else if (currentPhase === 'hold') { currentPhase = 'exhale';
+              timeLeft = 8; } else if (currentPhase === 'exhale') { currentPhase = 'inhale';
+              timeLeft = 4; }
+          }
+          updateDisplay();
+          if (currentPhase === 'inhale') circleTimer.style.color = '#4b6a56';
+          else if (currentPhase === 'hold') circleTimer.style.color = '#7f9c9b';
+          else circleTimer.style.color = '#8f7e6b';
+        }, 1000);
+      }
+
+      toggleBtn.addEventListener('click', startBreathCycle);
+      startBreatheBtn.addEventListener('click', function() { resetBreath();
+        startBreathCycle(); });
+      resetBreatheBtn.addEventListener('click', resetBreath);
+
+      // ============================================
+      // 2. MEDITATION TIMER
+      // ============================================
+      let meditationSeconds = 300; // 5 min default
+      let meditationRemaining = 300;
+      let meditationInterval = null;
+      let meditationRunning = false;
+      const medDisplay = document.getElementById('meditationDisplay');
+      const medStatus = document.getElementById('meditationStatus');
+      const medStartBtn = document.getElementById('meditationStartBtn');
+      const medResetBtn = document.getElementById('meditationResetBtn');
+      const presetBtns = document.querySelectorAll('.btn-meditation-preset');
+
+      function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      }
+
+      function updateMedDisplay() {
+        medDisplay.textContent = formatTime(meditationRemaining);
+      }
+
+      function stopMeditation() {
+        if (meditationInterval) { clearInterval(meditationInterval);
+          meditationInterval = null; }
+        meditationRunning = false;
+        medStartBtn.innerHTML = '<i class="fas fa-play"></i> Start';
+        medStatus.textContent = 'Paused';
+      }
+
+      function resetMeditation() {
+        stopMeditation();
+        meditationRemaining = meditationSeconds;
+        updateMedDisplay();
+        medStatus.textContent = 'Ready';
+        medStartBtn.innerHTML = '<i class="fas fa-play"></i> Start';
+      }
+
+      function startMeditation() {
+        if (meditationRunning) {
+          stopMeditation();
+          return;
+        }
+        if (meditationRemaining <= 0) {
+          resetMeditation();
+          return;
+        }
+        meditationRunning = true;
+        medStartBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+        medStatus.textContent = 'Meditating...';
+        meditationInterval = setInterval(() => {
+          meditationRemaining -= 1;
+          updateMedDisplay();
+          if (meditationRemaining <= 0) {
+            clearInterval(meditationInterval);
+            meditationInterval = null;
+            meditationRunning = false;
+            medStatus.textContent = '✨ Session complete!';
+            medStartBtn.innerHTML = '<i class="fas fa-play"></i> Start';
+            // subtle alert
+            medDisplay.style.color = '#5f7e6b';
+            setTimeout(() => { medDisplay.style.color = '#1f3138'; }, 2000);
+          }
+        }, 1000);
+      }
+
+      presetBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          if (meditationRunning) return;
+          presetBtns.forEach(b => b.classList.remove('active-preset'));
+          this.classList.add('active-preset');
+          const mins = parseInt(this.dataset.minutes);
+          meditationSeconds = mins * 60;
+          meditationRemaining = meditationSeconds;
+          updateMedDisplay();
+          medStatus.textContent = `Preset: ${mins} min`;
+          medStartBtn.innerHTML = '<i class="fas fa-play"></i> Start';
+        });
+      });
+
+      medStartBtn.addEventListener('click', startMeditation);
+      medResetBtn.addEventListener('click', resetMeditation);
+
+      // ============================================
+      // 3. AFFIRMATION GENERATOR
+      // ============================================
+      const affirmations = [
+        "You are enough, just as you are.",
+        "This moment is your fresh start.",
+        "You have survived 100% of your hardest days.",
+        "Kindness begins with yourself.",
+        "Your presence is a gift to the world.",
+        "Breathe. You are safe right now.",
+        "Small steps lead to big changes.",
+        "You are worthy of love and peace.",
+        "Today, I choose calm over chaos.",
+        "You are stronger than you know.",
+        "Every breath is a new beginning.",
+        "You are exactly where you need to be.",
+        "Your heart knows the way."
+      ];
+      const affDisplay = document.getElementById('affirmationDisplay');
+      const affBtn = document.getElementById('newAffirmationBtn');
+
+      function showRandomAffirmation() {
+        const random = affirmations[Math.floor(Math.random() * affirmations.length)];
+        affDisplay.textContent = `“${random}”`;
+      }
+      affBtn.addEventListener('click', showRandomAffirmation);
+      showRandomAffirmation();
+
+      // ============================================
+      // 4. MOOD TRACKER (with stats)
+      // ============================================
+      const moodBtns = document.querySelectorAll('.mood-btn');
+      const moodFeedback = document.getElementById('moodFeedback');
+      const moodHistory = document.getElementById('moodHistory');
+      const countGreat = document.getElementById('countGreat');
+      const countOkay = document.getElementById('countOkay');
+      const countMeh = document.getElementById('countMeh');
+      const countLow = document.getElementById('countLow');
+      let moodLog = [];
+
+      try {
+        const saved = JSON.parse(localStorage.getItem('serenemind_moods'));
+        if (Array.isArray(saved)) moodLog = saved;
+      } catch (e) {}
+
+      function renderMoodHistory() {
+        moodHistory.innerHTML = '';
+        const recent = moodLog.slice(-20);
+        const colors = { great: '#2d6a4f', okay: '#6b8c5c', meh: '#b68b6e', low: '#8d6b6b' };
+        recent.forEach(m => {
+          const dot = document.createElement('span');
+          dot.className = 'mood-dot';
+          dot.style.background = colors[m] || '#ccc';
+          dot.title = m + ' · ' + new Date().toLocaleDateString();
+          moodHistory.appendChild(dot);
+        });
+        // update stats
+        const stats = { great: 0, okay: 0, meh: 0, low: 0 };
+        moodLog.forEach(m => { if (stats[m] !== undefined) stats[m]++; });
+        countGreat.textContent = stats.great;
+        countOkay.textContent = stats.okay;
+        countMeh.textContent = stats.meh;
+        countLow.textContent = stats.low;
+      }
+
+      moodBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const mood = this.dataset.mood;
+          moodBtns.forEach(b => b.classList.remove('active-mood'));
+          this.classList.add('active-mood');
+          moodLog.push(mood);
+          if (moodLog.length > 100) moodLog = moodLog.slice(-100);
+          localStorage.setItem('serenemind_moods', JSON.stringify(moodLog));
+          const messages = {
+            great: 'Wonderful! Keep that positive energy going 🌟',
+            okay: 'Glad you’re here. A gentle moment can help 🌱',
+            meh: 'It’s okay to feel neutral. Rest and recharge 🍂',
+            low: 'Thank you for being honest. You are not alone 🌧️'
+          };
+          moodFeedback.textContent = messages[mood] || 'Thanks for sharing.';
+          renderMoodHistory();
+        });
+      });
+      renderMoodHistory();
+
+      // ============================================
+      // 5. SOUND PLAYER (simulated)
+      // ============================================
+      const soundBtns = document.querySelectorAll('.sound-btn');
+      const soundStatus = document.getElementById('soundStatus');
+      let currentSound = null;
+      let soundInterval = null;
+
+      function stopSound() {
+        if (soundInterval) { clearInterval(soundInterval);
+          soundInterval = null; }
+        soundBtns.forEach(b => b.classList.remove('active-sound'));
+        if (currentSound) {
+          soundStatus.innerHTML = `🔇 Stopped ${currentSound}`;
+          currentSound = null;
+        } else {
+          soundStatus.innerHTML = '🔇 No sound playing';
+        }
+      }
+
+      soundBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const sound = this.dataset.sound;
+          if (currentSound === sound) {
+            stopSound();
+            return;
+          }
+          stopSound();
+          currentSound = sound;
+          this.classList.add('active-sound');
+          soundStatus.innerHTML = `🔊 Playing: ${sound} ... (simulated)`;
+          let dots = 0;
+          soundInterval = setInterval(() => {
+            dots = (dots % 3) + 1;
+            const dotStr = '.'.repeat(dots);
+            soundStatus.innerHTML = `🔊 Playing: ${sound} ${dotStr}`;
+          }, 700);
+        });
+      });
+
+      // ============================================
+      // CLEANUP
+      // ============================================
+      window.addEventListener('beforeunload', function() {
+        if (timerInterval) clearInterval(timerInterval);
+        if (meditationInterval) clearInterval(meditationInterval);
+        if (soundInterval) clearInterval(soundInterval);
+      });
+
+      console.log('🌿 SereneMind Professional loaded — take a deep breath.');
+    })();
+  </script>
+</body>
+</html>
