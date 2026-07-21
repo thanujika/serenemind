@@ -23,13 +23,13 @@ A calming, feature-rich web application designed to help users manage stress and
 
 ## 🚀 Live Demo
 
-[View Live Demo](#) — *(Replace with your GitHub Pages or Netlify link)*
+[View Live Demo](#) 
 
 ## 📦 Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/serenemind.git
+   git clone https://github.com/thanujika/serenemind.git
 
 Open index.html in your browser
 
@@ -70,7 +70,6 @@ MIT License — feel free to use, modify, and distribute.
 
 🙏 Acknowledgments
 Inspired by mental health awareness and wellness practices
-
 Built as a portfolio project for web development skills demonstration
 
 
@@ -88,13 +87,4 @@ Made with ❤️ for mental wellness
 | **Responsive** | Demonstrates mobile-friendliness |
 | **Resources** | Shows the value-added content |
 | **License** | MIT is standard for open-source portfolios |
-
-## Optional Additions
-
-You can also include:
-- **Screenshots** — Add images in a `/screenshots` folder and reference them
-- **Project Structure** — Brief file/folder explanation
-- **Future Improvements** — List planned features
-- **Badges** — Show build status, license, etc.
-
-Save this as `README.md` in your repository root.
+ 
