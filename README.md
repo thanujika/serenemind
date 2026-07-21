@@ -68,12 +68,13 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 📄 License
 MIT License — feel free to use, modify, and distribute.
 
-🙏 Acknowledgments
+🙏 Acknowledgments - 
 Inspired by mental health awareness and wellness practices
 Built as a portfolio project for web development skills demonstration
 
 
 Made with ❤️ for mental wellness
+
 ## Key Sections Explained
 
 | Section | Purpose |
